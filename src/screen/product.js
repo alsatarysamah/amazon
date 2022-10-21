@@ -16,76 +16,87 @@ export default function Product() {
     setProduct(res.data);
     // console.log(product.name);
   };
- 
-useEffect(()=>{
-  console.log("hiiiiiiiiiiiiiiiii");
-  fetchData();
-},[id])
 
-const {state,dispatch}=useContext(Store);
-const addToCartHandler=()=>{
-  console.log("add");
-dispatch({type:"ADD",payload:{...product,qun:1}})
-}
+  useEffect(() => {
+    console.log("hiiiiiiiiiiiiiiiii");
+    fetchData();
+  }, [id]);
+
+  const { state, dispatch } = useContext(Store);
+  const { cart } = state;
+
+  const addToCartHandler = () => {
+    const existItem = cart.cartItem.find((x) => x.id === product.id);
+
+    const quantity = existItem ? existItem.qun + 1 : 1;
+    dispatch({ type: "ADD", payload: { ...product, qun: quantity } });
+  };
   return (
     <div>
-    {product&&  <Row>
-        <Col md={6}>
-          <img className="image-large" src={product.imgUrl}></img>
-        </Col>
-        <Col md={3}>
-          <ListGroup variant="flush">
-            <ListGroup.Item>
-              <Helmet>
-              <title>{product.name}</title>
-              </Helmet>
-              <h1>{product.name}</h1>
+      {product && (
+        <Row>
+          <Col md={6}>
+            <img className="image-large" src={product.imgUrl}></img>
+          </Col>
+          <Col md={3}>
+            <ListGroup variant="flush">
+              <ListGroup.Item>
+                <Helmet>
+                  <title>{product.name}</title>
+                </Helmet>
+                <h1>{product.name}</h1>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <Rating num="3" rating="3"></Rating>
+              </ListGroup.Item>
 
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <Rating num="3" rating="3"></Rating>
-            </ListGroup.Item>
-
-            <ListGroup.Item>
-              <p>{product.description}</p>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <p>Price : {product.price}</p>
-            </ListGroup.Item>
-          </ListGroup>
-        </Col>
-        <Col md={3}>
-          <Card>
-            <Card.Body>
-              <ListGroup variant="flush">
-                <ListGroup.Item>
-                  <Row>
-                    <Col>
-                      <Row>Price :</Row>
-                      <Row> {product.price}</Row>
-                    </Col>
-                  </Row>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <p>
-                    Statues :{" "}
-                    {product.price > 6 ? (
-                      <Badge bg="success">High</Badge>
-                    ) : (
-                      <Badge bg="danger">Unavailable</Badge>
-                    )}
-                  </p>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  {product.price > 6 ? (
-                    <Button onClick={addToCartHandler} variant="primary" className="btn-add">Add to cart</Button>
-                  ) : null}
-                </ListGroup.Item>
-              </ListGroup>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>}
+              <ListGroup.Item>
+                <p>{product.description}</p>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <p>Price : {product.price}</p>
+              </ListGroup.Item>
+            </ListGroup>
+          </Col>
+          <Col md={3}>
+            <Card>
+              <Card.Body>
+                <ListGroup variant="flush">
+                  <ListGroup.Item>
+                    <Row>
+                      <Col>
+                        <Row>Price :</Row>
+                        <Row> {product.price}</Row>
+                      </Col>
+                    </Row>
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                    <p>
+                      Statues :{" "}
+                      {product.price > 6 ? (
+                        <Badge bg="success">High</Badge>
+                      ) : (
+                        <Badge bg="danger">Unavailable</Badge>
+                      )}
+                    </p>
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                    {product.price > 0 ? (
+                      <Button
+                        onClick={addToCartHandler}
+                        variant="primary"
+                        className="btn-add"
+                      >
+                        Add to cart
+                      </Button>
+                    ) : null}
+                  </ListGroup.Item>
+                </ListGroup>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      )}
     </div>
   );
 }
