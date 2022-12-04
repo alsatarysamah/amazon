@@ -13,6 +13,9 @@ body {
 main{
  flex: 1;
 }
+.small-container {
+  max-width: 600px;
+}
 .btn-add{
   color: black;
   background-color: #ffc000;
@@ -39,4 +42,16 @@ main{
 }
 .image-large{
   max-width: 100%;
+}
+.img-th{
+  height: 80px;
+
+}
+.checkout-steps > div {
+  border-bottom: 0.2rem solid #a0a0a0;
+  color: #a0a0a0;
+}
+.checkout-steps > div.active {
+  border-bottom: 0.2rem solid #f08000;
+  color: #f08000;
 }
