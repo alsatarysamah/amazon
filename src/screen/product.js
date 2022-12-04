@@ -2,7 +2,7 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { Badge, Button, Card, Col, ListGroup, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Rating from "../component/Rating";
 import { Store } from "../store";
 
@@ -10,6 +10,7 @@ export default function Product() {
   const [product, setProduct] = useState();
   const parms = useParams();
   const { id } = parms;
+  const navigate=useNavigate();
 
   const fetchData = async () => {
     const res = await axios.get(`http://localhost:5000/item/${id}`);
@@ -18,7 +19,6 @@ export default function Product() {
   };
 
   useEffect(() => {
-    console.log("hiiiiiiiiiiiiiiiii");
     fetchData();
   }, [id]);
 
@@ -30,6 +30,7 @@ export default function Product() {
 
     const quantity = existItem ? existItem.qun + 1 : 1;
     dispatch({ type: "ADD", payload: { ...product, qun: quantity } });
+    navigate("/cart")
   };
   return (
     <div>
