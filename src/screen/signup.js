@@ -56,7 +56,7 @@ export default function Signup() {
             <Form.Label>Username</Form.Label>
             <Form.Control
               value={username}
-              onChange={(e) => setUsername(e.target.checked
+              onChange={(e) => setUsername(e.target.value
                 )}
               required
             />
