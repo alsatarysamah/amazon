@@ -33,7 +33,7 @@ export default function Signup() {
     }
     try {
       axios
-        .post("http://localhost:5000/signup", { username, password, email })
+        .post("https://shoppingserver.cleverapps.io/signup", { username, password, email })
         .then((data) => {
            dispatch({ type: 'USER_SIGNIN', payload: data });
             localStorage.setItem('userInfo', JSON.stringify(data));

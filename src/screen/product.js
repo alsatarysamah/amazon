@@ -13,7 +13,7 @@ export default function Product() {
   const navigate=useNavigate();
 
   const fetchData = async () => {
-    const res = await axios.get(`http://localhost:5000/item/${id}`);
+    const res = await axios.get(`https://shoppingserver.cleverapps.io/item/${id}`);
     setProduct(res.data);
     // console.log(product.name);
   };

@@ -10,7 +10,7 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get("http://localhost:5000/item");
+      const res = await axios.get("https://shoppingserver.cleverapps.io/item");
       setProducts(res.data);
     };
     fetchData();
