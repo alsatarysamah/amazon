@@ -32,7 +32,7 @@ export default function SigninScreen() {
      
       console.log({ username });
       const response = await superAgent
-        .post("http://localhost:5000/signin")
+        .post("https://shoppingserver.cleverapps.io/signin")
         .set(
           "authorization",
           `Basic ${base64.encode(`${username}:${password}`)}`
