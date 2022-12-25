@@ -1,42 +1,48 @@
-import  axios  from "axios";
+import axios from "axios";
 import { useContext } from "react";
 import { Button, Card, Col, ListGroup, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 import CheckOutSteps from "../component/checkOutSteps";
 import { Store } from "../store";
 
 export default function PlaceOrder() {
+  let navigate = useNavigate();
+
   const { state, dispatch } = useContext(Store);
   const { cart, userInfo } = state;
-  console.log({ cart });
-  console.log({ userInfo });
   let totalPrice = 0;
   cart.cartItem.forEach((element) => {
-    totalPrice += element.price*element.qun;
+    totalPrice += element.price * element.qun;
   });
-  
-///////////////////////////////////////////////////////
+
+  ///////////////////////////////////////////////////////
   const placeOrderHandler = async () => {
-    
-    console.log(cart.shippingAddress);
     const { data } = await axios.post(
-      'http://localhost:5000/order', 
-        {
-            orderItem: cart.cartItem,
-            shippingAddress: cart.shippingAddress.city,
-            paymentMethod: cart.paymentMethod,
-            itemsPrice: totalPrice,
-            totalPrice: totalPrice + 2,
-            userId: userInfo.id,
-          },
-      
+      "http://localhost:5000/order",
+      {
+        orderItem: cart.cartItem,
+        shippingAddress: cart.shippingAddress.city,
+        paymentMethod: cart.paymentMethod,
+        itemsPrice: totalPrice,
+        totalPrice: totalPrice + 2,
+        userId: userInfo.id,
+      },
+      {
+        headers: { authorization: `Bearer ${userInfo.token}` },
+      }
     );
-    console.log({data});
+    toast.success("Ordered");
+
+    dispatch({ type: "CART_CLEAR" });
+    localStorage.removeItem("cartItem");
+    navigate(`/`);
   };
   return (
     <>
       <CheckOutSteps step1 step2 step3 step4 />
+      <ToastContainer />
       <Helmet>
         <title>Preview Order</title>
       </Helmet>

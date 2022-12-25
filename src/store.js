@@ -34,7 +34,9 @@ function reducer(state, action) {
         : [...state.cart.cartItem, newItem];
       localStorage.setItem("cartItem", JSON.stringify(cartItem));
       return { ...state, cart: { ...state.cart, cartItem } };
-
+      case 'CART_CLEAR':
+        return { ...state, cart: { ...state.cart, cartItem: [] } };
+  
     case "REMOVE": {
       console.log("store");
       const cartItem = state.cart.cartItem.filter(
