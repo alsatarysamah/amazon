@@ -13,7 +13,7 @@ const navigate=useNavigate();
     cart: { cartItem },
   } = state;
   const updateCart = async (item, qun) => {
-    console.log({item});
+    
     // const { data } = await axios.get(`/api/products/${item.id}`);
     // if (data.countInStock < quantity) {
     //   window.alert('Sorry. Product is out of stock');
@@ -34,6 +34,7 @@ const navigate=useNavigate();
   const checkoutHandler = ()=>{
     navigate("/signin?redirect=/shipping")
   }
+  
   return (
     <>
       <Helmet>

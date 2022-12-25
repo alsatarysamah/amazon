@@ -22,7 +22,6 @@ function App() {
 
   const {state,dispatch}=useContext(Store);
   const {cart,userInfo}=state;
-  console.log(cart.cartItem.length);
 
   const signoutHandler=()=>{
     dispatch({type:"SIGNOUT"});
@@ -42,7 +41,7 @@ function App() {
           <NavBar bg="dark" variant="dark">
             <Container className="mt-3">
               <LinkContainer to="/">
-                <NavBar.Brand>Amazon</NavBar.Brand>
+                <NavBar.Brand>T-shirtee</NavBar.Brand>
               </LinkContainer>
               {/* <LinkContainer className="me-auto "> */}
                 <Nav  className="mr-auto">

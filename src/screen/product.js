@@ -67,7 +67,7 @@ export default function Product() {
                     <Row>
                       <Col>
                         <Row>Price :</Row>
-                        <Row> {product.price}</Row>
+                        <Row><strong>{product.price}</strong> </Row>
                       </Col>
                     </Row>
                   </ListGroup.Item>

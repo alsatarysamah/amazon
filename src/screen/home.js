@@ -14,6 +14,7 @@ export default function Home() {
       setProducts(res.data);
     };
     fetchData();
+ 
   }, []);
   return (
     <>
