@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <>
     <Helmet>
-      <title>Amazon</title>
+      <title>T-shirtee</title>
     </Helmet>
       <h1>list of product</h1>
       <Row>
