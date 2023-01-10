@@ -11,8 +11,9 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      // const res = await axios.get("https://shoppingserver-production.up.railway.app/item");
-      setProducts(items.products);
+      const res = await axios.get("https://shoppingserver-production.up.railway.app/item");
+      console.log(res.data);
+      setProducts(res.data);
 
     };
     fetchData();
