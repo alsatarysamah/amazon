@@ -13,7 +13,7 @@ export default function Product() {
   const navigate=useNavigate();
 
   const fetchData = async () => {
-    const res = await axios.get(`https://shoppingserver.cleverapps.io/item/${id}`);
+    const res = await axios.get(`https://shoppingserver-production.up.railway.app/item/${id}`);
     setProduct(res.data);
     // console.log(product.name);
   };

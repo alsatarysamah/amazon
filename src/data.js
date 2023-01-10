@@ -1,54 +1,66 @@
-
-const data = {
+export  const items = {
     products: [
       {
-        name: 'Nike Slim shirt',
-        slug: 'nike-slim-shirt',
-        category: 'Shirts',
-        image: '/images/p1.jpg', // 679px × 829px
-        price: 120,
-        countInStock: 10,
-        brand: 'Nike',
-        rating: 4.5,
-        numReviews: 10,
-        description: 'high quality shirt',
-      },
-      {
-        name: 'Adidas Fit Shirt',
-        slug: 'adidas-fit-shirt',
-        category: 'Shirts',
-        image: '/images/p2.jpg',
-        price: 250,
-        countInStock: 20,
-        brand: 'Adidas',
-        rating: 4.0,
-        numReviews: 10,
-        description: 'high quality product',
-      },
-      {
-        name: 'Nike Slim Pant',
-        slug: 'nike-slim-pant',
-        category: 'Pants',
-        image: '/images/p3.jpg',
-        price: 25,
-        countInStock: 15,
-        brand: 'Nike',
-        rating: 4.5,
-        numReviews: 14,
-        description: 'high quality product',
-      },
-      {
-        name: 'Adidas Fit Pant',
-        slug: 'adidas-fit-pant',
-        category: 'Pants',
-        image: '/images/p4.jpg',
-        price: 65,
-        countInStock: 5,
-        brand: 'Puma',
-        rating: 4.5,
-        numReviews: 10,
-        description: 'high quality product',
-      },
+        "imgUrl": "https://github.com/mahmud-sajib/ecommerce-store-product-data/blob/master/t-shirt1.jpg?raw=true",
+        "name": "Hawaii Tee",
+        "description": "The Hawaii T-Shirt is made with midweight cotton fabric for soft comfort that lasts. It has a refreshing vibe that let you celebrate the day you live.",
+        "price": "4"
+      
+    },
+    {
+        "imgUrl": "https://github.com/mahmud-sajib/ecommerce-store-product-data/blob/master/t-shirt2.jpg?raw=true",
+        "name": "St. Martins Tee",
+        "description": "The St. Martins T-Shirt is made with midweight cotton fabric for soft comfort that lasts. It has a refreshing vibe that let you celebrate the day you live.",
+        "price": "5",
+       
+    }
+,
+        {
+        "imgUrl": "https://github.com/mahmud-sajib/ecommerce-store-product-data/blob/master/t-shirt3.jpg?raw=true",
+        "name": "Bora Bora Tee",
+        "description": "The Bora Bora T-Shirt is made with midweight cotton fabric for soft comfort that lasts. It has a refreshing vibe that let you celebrate the day you live.",
+        "price": "9"
+    }
+    ,
+    {
+        "imgUrl": "https://github.com/mahmud-sajib/ecommerce-store-product-data/blob/master/t-shirt4.jpg?raw=true",
+        "name": "Palawan Tee",
+        "description": "The Palawan T-Shirt is made with midweight cotton fabric for soft comfort that lasts. It has a refreshing vibe that let you celebrate the day you live.",
+        "price": "2"
+    }
+,
+     {
+        "imgUrl": "https://github.com/mahmud-sajib/ecommerce-store-product-data/blob/master/t-shirt5.jpg?raw=true",
+        "name": "Santorini Tee",
+        "description": "The Santorini T-Shirt is made with midweight cotton fabric for soft comfort that lasts. It has a refreshing vibe that let you celebrate the day you live.",
+        "price": "5"
+    }
+    ,
+    {
+        "imgUrl": "https://github.com/mahmud-sajib/ecommerce-store-product-data/blob/master/t-shirt6.jpg?raw=true",
+        "name": "Bali Tee",
+        "description": "The Bali T-Shirt is made with midweight cotton fabric for soft comfort that lasts. It has a refreshing vibe that let you celebrate the day you live.",
+        "price": "9"
+    },
+
+     {
+        "imgUrl": "https://github.com/mahmud-sajib/ecommerce-store-product-data/blob/master/t-shirt7.jpg?raw=true",
+        "name": "Fizi Tee",
+        "description": "The Fizi T-Shirt is made with midweight cotton fabric for soft comfort that lasts. It has a refreshing vibe that let you celebrate the day you live.",
+        "price": 4
+    },
+    {
+        "imgUrl": "https://github.com/mahmud-sajib/ecommerce-store-product-data/blob/master/t-shirt8.jpg?raw=true",
+        "name": "St. Lucia Tee",
+        "description": "The St. Lucia T-Shirt is made with midweight cotton fabric for soft comfort that lasts. It has a refreshing vibe that let you celebrate the day you live.",
+        "price": 7
+    },
+    {
+        "imgUrl": "https://github.com/mahmud-sajib/ecommerce-store-product-data/blob/master/t-shirt9.jpg?raw=true",
+        "name": "Bahamas Tee",
+        "description": "The Bahamas T-Shirt is made with midweight cotton fabric for soft comfort that lasts. It has a refreshing vibe that let you celebrate the day you live.",
+        "price": 8
+    }
     ],
   };
-  export default data;
+  export default items;

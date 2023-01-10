@@ -33,7 +33,7 @@ export default function Signup() {
     }
     try {
       axios
-        .post("https://shoppingserver.cleverapps.io/signup", { username, password, email })
+        .post("https://shoppingserver-production.up.railway.app/signup", { username, password, email })
         .then((data) => {
            dispatch({ type: 'USER_SIGNIN', payload: data });
             localStorage.setItem('userInfo', JSON.stringify(data));
@@ -56,7 +56,7 @@ export default function Signup() {
             <Form.Label>Username</Form.Label>
             <Form.Control
               value={username}
-              onChange={(e) => setUsername(e.target.checked
+              onChange={(e) => setUsername(e.target.value
                 )}
               required
             />
