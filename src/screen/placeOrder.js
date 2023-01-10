@@ -20,7 +20,7 @@ export default function PlaceOrder() {
   ///////////////////////////////////////////////////////
   const placeOrderHandler = async () => {
     const { data } = await axios.post(
-      "https://shoppingserver.cleverapps.io/order",
+      "https://shoppingserver-production.up.railway.app/order",
       {
         orderItem: cart.cartItem,
         shippingAddress: cart.shippingAddress.city,

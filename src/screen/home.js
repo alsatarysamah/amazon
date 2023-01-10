@@ -5,13 +5,15 @@ import axios from "axios";
 import { Col, Row } from "react-bootstrap";
 import Product from "../component/Product";
 import { Helmet } from "react-helmet-async";
+import {items} from "../../src/data"
 
 export default function Home() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get("https://shoppingserver.cleverapps.io/item");
-      setProducts(res.data);
+      // const res = await axios.get("https://shoppingserver-production.up.railway.app/item");
+      setProducts(items.products);
+
     };
     fetchData();
  
